@@ -5,8 +5,8 @@ function App() {
     <div>
       <Header />
       <Playlist />
-      <Container />
-      <Container2 />
+      <Container title="사랑에 연습이 있었다면" />
+      <Container title="사건의 지평선" />
       <Container3 />
     </div>
   )
@@ -24,31 +24,31 @@ function Playlist() {
   )
 }
 
-function Container() {
+function Container(props) {
   return (
     <div className="container">
-      <a href="https://www.youtube.com/results?search_query=사랑에 연습이 있었다면">
+      <a href="https://www.youtube.com/results?search_query={props.title}">
         <img
           src="https://picsum.photos/600/150?random=1"
           alt="랜덤 이미지 1" />
-        <div className="song-title">사랑에 연습이 있었다면</div>
+        <div className="song-title">{props.title}</div>
       </a>
     </div>
   )
 }
 
-function Container2() {
-  return (
-    <div className="container">
-      <a href="https://www.youtube.com/results?search_query=사건의 지평선">
-        <img
-          src="https://picsum.photos/600/150?random=2"
-          alt="랜덤 이미지 2" />
-        <div className="song-title">사건의 지평선</div>
-      </a>
-    </div>
-  )
-}
+// function Container2() {
+//   return (
+//     <div className="container">
+//       <a href="https://www.youtube.com/results?search_query=사건의 지평선">
+//         <img 
+//           src="https://picsum.photos/600/150?random=2" 
+//           alt="랜덤 이미지 2"/>
+//         <div className="song-title">사건의 지평선</div>
+//       </a>
+//     </div>
+//   )
+// }
 
 function Container3() {
   return (
