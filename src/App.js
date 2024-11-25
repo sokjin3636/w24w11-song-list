@@ -1,62 +1,29 @@
 import './App.css'
+import Container from './Container.js'
 
-function App() {
+const App = () => {
   return (
     <div>
       <Header />
-      <Playlist />
-      <Container title="사랑에 연습이 있었다면" />
-      <Container title="사건의 지평선" />
-      <Container3 />
+      <Playlist
+        title="프로그래밍하면서 듣고 싶은 노래" />
     </div>
   )
 }
 
-function Header() {
+const Header = () => {
   return (
     <h1>React 프로그래밍</h1>
   )
 }
 
-function Playlist() {
+const Playlist = props => {
   return (
-    <div className="playlist">프로그래밍하면서 듣고 싶은 노래</div>
-  )
-}
-
-function Container(props) {
-  return (
-    <div className="container">
-      <a href="https://www.youtube.com/results?search_query={props.title}">
-        <img
-          src="https://picsum.photos/600/150?random=1"
-          alt="랜덤 이미지 1" />
-        <div className="song-title">{props.title}</div>
-      </a>
-    </div>
-  )
-}
-
-// function Container2() {
-//   return (
-//     <div className="container">
-//       <a href="https://www.youtube.com/results?search_query=사건의 지평선">
-//         <img 
-//           src="https://picsum.photos/600/150?random=2" 
-//           alt="랜덤 이미지 2"/>
-//         <div className="song-title">사건의 지평선</div>
-//       </a>
-//     </div>
-//   )
-// }
-
-function Container3() {
-  return (
-    <div className="container">
-      <a href="https://www.youtube.com/results?search_query=사랑은 늘 도망가">
-        <img src="https://picsum.photos/600/150?random=3" alt="랜덤 이미지 3" />
-        <div className="song-title">사랑은 늘 도망가</div>
-      </a>
+    <div className='playlist'>
+      <div className="playlist">{props.title}</div>
+      <Container title="사랑에 연습이 있었다면" index="1" />
+      <Container title="사건의 지평선" index="2" />
+      <Container title="사랑은 늘 도망가" index="3" />
     </div>
   )
 }
